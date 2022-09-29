@@ -1,6 +1,6 @@
 body{
     margin: 0%;
-    background: #F3F5FC;
+    background: #F3F5FC;/*#F3F5FC #0A3871*/
 }
 
 .logo{
@@ -40,3 +40,106 @@ body{
 .boton-nueva-palabra:hover{
     background: #c1c2c9;
 }
+
+#clase-canvas{
+    display: none;
+    position: absolute;
+    background-color: orange;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 0%;
+}
+
+canvas{
+    background-color: yellow;
+    position: absolute;
+    left: 120px;
+}
+
+.boton-nuevo-juego{
+    display: block;
+    position: absolute;
+    top: 545px;
+    left: 240px;
+    height: 50px;
+    width: 400px;
+    border: 1px solid #0A3871;
+    border-radius: 0.5em;
+    color: white;
+    background-color: #0A3871;
+    font-size: 1.1em;
+}
+
+.boton-desistir{
+    display: block;
+    position: absolute;
+    top: 545px;
+    right: 240px;
+    height: 50px;
+    width: 400px;
+    border: 1px solid #0A3871;
+    border-radius: 0.5em;
+    color:#0A3871;
+    font-size: 1.1em;
+
+}
+
+.container-palabra-nueva{
+    display: none;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+}
+
+.container-palabra-nueva label{
+    display: block;
+    font-size: 2em;
+    font-weight: 500;
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    color: #0A3871;
+}
+
+.container-palabra-nueva input{
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 8%;
+    top: 20%;
+    left: 15%;
+    font-size: 1.6em;
+    border-radius: 0.2em;
+    border: 1px solid #0A3871;
+}
+
+.container-palabra-nueva #boton1{
+    background: #0A3871;
+    width: 30%;
+    height: 8%;
+    position: absolute;
+    top: 90%;
+    left: 15%;
+    border: 1px solid #0A3871;
+    border-radius: 0.5em;
+    color: white;
+    font-size: 1.1em;
+}
+
+.container-palabra-nueva .boton-cancelar{
+    width: 30%;
+    height: 8%;
+    position: absolute;
+    top: 90%;
+    right: 14.2%;
+    border: 1px solid #0A3871;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    color: #0A3871;
+}
+
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +9,26 @@
 </head>
 <body>
     <main>
-        <div>
-            <img class="logo" src="imagenes/Vector.png" alt="logo_alura">
-            <button class="boton-inicio">Iniciar juego</button>
-            <button class="boton-nueva-palabra">Agregar nueva palabra</button>
+        <img class="logo" src="imagenes/Vector.png" alt="logo_alura">
+        <div class="campos-inicio">
+            <button class="boton-inicio" id="iniciar-juego" onclick="iniciarJuego()">Iniciar juego</button>
+            <button class="boton-nueva-palabra" id="nueva-palabra" onclick="mostrarCampos()">Agregar nueva palabra</button>
+        </div>
+        <div class="container-palabra-nueva">
+            <label for="palabra-nueva">Digite  la palabra</label>
+            <input type="text" id="palabra-nueva">
+            <button id="boton1" onclick="agregar()">Guardar</button>
+            <button class="boton-cancelar" onclick="ocultarCampos()">Cancelar</button>
+        </div>
+            
+        <div id="clase-canvas">
+            <canvas id="lienzo" width="1200" height="869"></canvas>
+            <button class="boton-nuevo-juego">Nuevo juego</button>
+            <button class="boton-desistir">Desistir</button>
         </div>
     </main>
-    
+    <!--<footer>Desarrollado por: Daniel Caro</footer>-->
+    <script src="logica.js"></script>
+    <script src="canvas.js"></script>
 </body>
 </html>
