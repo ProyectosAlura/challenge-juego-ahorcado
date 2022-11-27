@@ -240,4 +240,31 @@ a{
         width: 40%;
     }
 
+    .container-palabra-nueva{
+        left: 10%;
+    }
+
+    .container-palabra-nueva label{
+        left: 5%;
+    }
+
+    .container-palabra-nueva input{
+        width: 95%;
+        left: 5%;
+    }
+
+    .container-palabra-nueva #boton1{
+        width: 35%;
+        height: 8%;
+        left: 5%;
+    }
+    
+    .container-palabra-nueva p {
+        left: 5%;
+    }
+
+    .container-palabra-nueva .boton-cancelar{
+        width: 35%;
+        right: 5%;
+    }
 }
