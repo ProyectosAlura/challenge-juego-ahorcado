@@ -4,7 +4,9 @@ let tablero = document.getElementById("lienzo").getContext("2d");
 let palabraSecreta = "";
 let letras = []; //guardar las letras ingresadas
 let letrasCorrectas = [];
+let letrasIncorrectas = [];
 let errores = 8;
+let contador=8;
 
 //Funcion de desistir
 function desistir(){
@@ -17,25 +19,25 @@ function desistir(){
 
 function mostrarCampos(){
     document.querySelector(".container-palabra-nueva").style.display="block";
-    document.querySelector(".campos-inicio").style.display="none";
+    document.querySelector(".campos-inicio").style.display="none"; //Se ocultan los campos de inicio
 }
 
 function ocultarCampos(){
     document.querySelector(".container-palabra-nueva").style.display="none";
-    document.querySelector(".campos-inicio").style.display="block";
+    document.querySelector(".campos-inicio").style.display="block"; //Se muestrab los campos de inicio
 }
 
-function agregarPalabra(){
+function agregarPalabra(){ //Funcion para agregar palabra
     let existen_numeros = false;
     let campo = document.querySelector("input"); //Verificar si hay numeros
     for (let index = 0; index < campo.value.length; index++) {
-        console.log(campo.value[0]);
+        //console.log(campo.value[0]);
         if(!isNaN(campo.value[index])){
             existen_numeros=true;
         }
     }
 
-    if(existen_numeros==false){
+    if(existen_numeros===false){
         if(campo.value.length<=8){
             palabras.push(campo.value.toLocaleUpperCase()); //se agrega a las palabras
             ocultarCampos();
@@ -94,7 +96,9 @@ function iniciarJuego(){
     document.getElementById("titulo-final").innerText="¡Ahorcado!";
     letras.length=0;
     letrasCorrectas.length=0;
+    letrasIncorrectas.length=0;
     errores=8;
+    contador=8;
     conteoPalabras=0;
     document.getElementById("titulo-final").style.display="none";
     terminado=false;
@@ -107,13 +111,13 @@ function iniciarJuego(){
 
         document.onkeydown = (e)=>{
             let letra = e.key.toUpperCase(); //se obtiene el evento y se deja en mayuscula
-            console.log("letra seleccionada",letra);
+            //console.log("letra seleccionada",letra);
             if(comprobarLetras(letra) ){ //Se comprueba que la letra este en el rango.
-                console.log(letras);
-                if(palabraSecreta.includes(letra)){
+                //console.log(letras);
+                if(palabraSecreta.includes(letra) && terminado==false){
                     if(comprobarLetrarepetida(letra)){
                         for(let i=0; i < palabraSecreta.length;i++){ //Se recorre el numero de palabras
-                            console.log("item palabra sectreta",palabraSecreta[i]);
+                            //console.log("item palabra sectreta",palabraSecreta[i]);
                             if(palabraSecreta[i]===letra){
                                 letrasCorrectas.push(letra);
                                 dibujarLetraCorrecta(i);
@@ -121,10 +125,19 @@ function iniciarJuego(){
                         }
                     }
                 }else{
-                    console.log(errores);
+                    //console.log(errores);
                     anhadirLetraIncorrecta(letra);
-                    console.log("error",errores);
-                    dibujarLetraIncorrecta(letra,errores);
+                    //console.log("error",errores);
+
+            
+                    if(!letrasIncorrectas.includes(letra)){
+                        letrasIncorrectas.push(letra);
+                        contador-=1;
+                        console.log(letra !== "Q");
+                        console.log(letrasIncorrectas);
+                        dibujarLetraIncorrecta(letra,contador);
+                    }
+                    
                 }
             }
         }

@@ -43,9 +43,9 @@ function  dibujarLetraCorrecta(index){
     let ancho = 600/palabraSecreta.length;
     tablero.fillText(palabraSecreta[index],332+(ancho*index),410);
     tablero.stroke();
-    console.log(letras);
+    //console.log(letras);
     if(letrasCorrectas.length==palabraSecreta.length){
-        console.log("ganaste");
+        //console.log("ganaste");
         document.getElementById("titulo-final").innerText="¡Ganaste!";
         document.getElementById("titulo-final").style.display="inline";
         tablero.fillStyle="#93d2f7";
@@ -165,6 +165,7 @@ function dibujarMunheco(){
                 document.getElementById("titulo-final").style.display="inline";
                 terminado=true;
                 errores=8;
+                contado=8;
                 break;
         }
     }

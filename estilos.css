@@ -199,13 +199,13 @@ a{
     }
     .boton-inicio{
         position: absolute;
-        left: 30%;
-        width: 40%;
+        left: 25%;
+        width: 50%;
     }
 
     .boton-nueva-palabra{
-        left: 35%;
-        width: 30%;
+        left: 30%;
+        width: 40%;
     }
 
     footer{
